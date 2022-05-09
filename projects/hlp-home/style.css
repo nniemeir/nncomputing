@@ -41,16 +41,19 @@ a:hover
   background-color: rgb(39, 39, 39);
   border-style:solid;
   border-color: rgb(158, 118, 177);
-  min-width: 160px;
+  min-width: 180px;
   z-index: 1;
+  margin-left:0px;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
 span {
   margin-left: 40px;
 }
+
 li{
   margin: 8px 0;
 }

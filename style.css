@@ -2,6 +2,9 @@ html {
     background-image: url("images/background.png");
     margin: 0;
 }
+* {
+    box-sizing: border-box;
+  }
 body {
     color: white;
     font-family: 'Courier New', Courier, monospace;
@@ -59,7 +62,7 @@ li {
     margin: 8px 0;
 }
 
-img {
+.icon img {
     height: 10em;
     margin: 0 -50% 0 0;
     position: absolute;
@@ -67,7 +70,7 @@ img {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-img:hover {
+.icon img:hover {
     filter: grayscale(100%) brightness(250%);
 }
 
@@ -89,6 +92,44 @@ footer {
     font-size: smaller;
     color: rgb(158, 118, 177);
 }
+
+.blogtext {
+    text-align:left;
+    margin-left:10%;
+    margin-right:30%;
+}
 .scriptlink {
     font-size:x-large;
+    text-align:center;
+} 
+  .column {
+    float: left;
+    padding: 10px;
+  }
+  .right img {
+    max-width:100%;
+    max-height:auto;
+    margin: 0;
+    position: relative;
+  }
+  .pic_caption {
+  padding: 10px 20px;
+  }
+
+  .left {
+    width: 65%;
+  }
+  
+  .right {
+    width: 35%;
+    margin-top:15%
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  figcaption {
+    font-style:italic;
+    margin-bottom:20%;
 }

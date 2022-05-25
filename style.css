@@ -1,15 +1,14 @@
 html {
-    background-image: url("images/background.png");
     margin: 0;
 }
 * {
     box-sizing: border-box;
   }
 body {
-    color: white;
+    color: #ffffff; 
     font-family: 'Courier New', Courier, monospace;
     font-size: large;
-    background: #101220;
+    background: #171717;
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -17,7 +16,22 @@ body {
     height: 100%;
     margin: 0;
 }
-
+@keyframes icon {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+@keyframes drops {
+    from {transform: translateX(-400%);}
+    to {transform: translateX(0%);}
+}
+@keyframes dropout {
+    from {transform: translateX(0%);}
+    to {transform: translateX(-400%);}
+}
+@keyframes footer {
+    from {transform: translateY(100%);}
+    to {transform: translateY(0%);}
+}
 a:link,
 a:visited,
 a:active {
@@ -25,13 +39,13 @@ a:active {
     text-decoration: none;
 }
 a:hover {
-    color: violet;
+    color: #734F96;
 }
 .list {
     list-style-type: none;
 }
 .listhead {
-    color: rgb(158, 118, 177);
+    color: #734F96;
     font-size: 24px;
 }
 .dropdown {
@@ -39,19 +53,24 @@ a:hover {
     position: relative;
     display: inline-block;
 }
-
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: rgb(39, 39, 39);
-    border-style: solid;
-    border-color: rgb(158, 118, 177);
     min-width: 180px;
     z-index: 1;
+    animation-fill-mode: backwards;
 }
-
+.dropdown-content li {
+    overflow: hidden;
+    white-space: nowrap;
+}
+.dropdown-content img {
+    height:1em;
+}
 .dropdown:hover .dropdown-content {
     display: block;
+    animation-name: drops;
+    animation-duration: 0.75s; 
 }
 
 span {
@@ -69,6 +88,8 @@ li {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    animation-name: icon;
+    animation-duration: 1s;
 }
 .icon img:hover {
     filter: grayscale(100%) brightness(250%);
@@ -76,7 +97,7 @@ li {
 
 .blogpost {
     border-style: solid;
-    border-color: rgb(158, 118, 177);
+    border-color: #734F96;
     text-align: center;
     margin-bottom: auto;
     margin-left: 30px;
@@ -90,7 +111,9 @@ footer {
     height: 60px;
     text-align: center;
     font-size: smaller;
-    color: rgb(158, 118, 177);
+    color: #734F96;
+    animation-name: footer;
+    animation-duration: 1s;
 }
 
 .blogtext {

@@ -1,3 +1,12 @@
+* {
+    box-sizing: border-box;
+  }
+body {
+    color: #ffffff; 
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    background: #171717;
+}
 body {
     color: #ffffff; 
     font-family: 'Courier New', Courier, monospace;
@@ -83,7 +92,6 @@ li {
 }
 
 /*Center icons */
-
 .icon img {
     height: 10em;
     margin: 0 -50% 0 0;
@@ -97,6 +105,24 @@ li {
 .icon img:hover {
     filter: grayscale(100%) brightness(250%);
 }
+input {
+    background-color:inherit;
+    color: #ffffff;
+    width: 40%;
+    position: relative;
+    border-top-style: hidden;
+    border-bottom-style: soild;
+    border-left-style: hidden;
+    border-right-style: hidden;
+    border-bottom-color: #734F96;
+    text-align: center;
+    outline: 0;
+    height: 3em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
 /*Specific to writeups */
 

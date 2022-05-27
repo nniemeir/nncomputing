@@ -1,12 +1,9 @@
+:root {
+    --lavender: #734F96;
+}
 * {
     box-sizing: border-box;
   }
-body {
-    color: #ffffff; 
-    font-family: 'Courier New', Courier, monospace;
-    font-size: large;
-    background: #171717;
-}
 body {
     color: #ffffff; 
     font-family: 'Courier New', Courier, monospace;
@@ -20,7 +17,7 @@ footer {
     height: 60px;
     text-align: center;
     font-size: smaller;
-    color: #734F96;
+    color: var(--lavender);
     animation-name: footer;
     animation-duration: 1s;
 }
@@ -31,7 +28,7 @@ a:active {
     text-decoration: none;
 }
 a:hover {
-    color: #734F96;
+    color: var(--lavender);
 }
 
 /*Animations */
@@ -56,7 +53,7 @@ a:hover {
 /*Dropdown Menus */
 
 .listhead {
-    color: #734F96;
+    color: var(--lavender);
     font-size: 24px;
 }
 .dropdown {
@@ -114,7 +111,7 @@ input {
     border-bottom-style: soild;
     border-left-style: hidden;
     border-right-style: hidden;
-    border-bottom-color: #734F96;
+    border-bottom-color: var(--lavender);
     text-align: center;
     outline: 0;
     height: 3em;
@@ -128,7 +125,7 @@ input {
 
 .blogpost {
     border-style: solid;
-    border-color: #734F96;
+    border-color: var(--lavender);
     text-align: center;
     margin-bottom: auto;
     margin-left: 30px;

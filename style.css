@@ -1,5 +1,5 @@
 :root {
-    --lavender: #734F96;
+    --accent-color: #E66B09;
 }
 * {
     box-sizing: border-box;
@@ -17,7 +17,7 @@ footer {
     height: 60px;
     text-align: center;
     font-size: smaller;
-    color: var(--lavender);
+    color: var(--accent-color);
     animation-name: footer;
     animation-duration: 1s;
 }
@@ -28,7 +28,7 @@ a:active {
     text-decoration: none;
 }
 a:hover {
-    color: var(--lavender);
+    color: var(--accent-color);
 }
 
 /*Animations */
@@ -53,7 +53,7 @@ a:hover {
 /*Dropdown Menus */
 
 .listhead {
-    color: var(--lavender);
+    color: var(--accent-color);
     font-size: 24px;
 }
 .dropdown {
@@ -111,7 +111,7 @@ input {
     border-bottom-style: soild;
     border-left-style: hidden;
     border-right-style: hidden;
-    border-bottom-color: var(--lavender);
+    border-bottom-color: var(--accent-color);
     text-align: center;
     outline: 0;
     height: 3em;
@@ -125,7 +125,7 @@ input {
 
 .blogpost {
     border-style: solid;
-    border-color: var(--lavender);
+    border-color: var(--accent-color);
     text-align: center;
     margin-bottom: auto;
     margin-left: 30px;
